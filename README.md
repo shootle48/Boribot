@@ -1,64 +1,64 @@
-# 🗣️ Context Bot (บริบท)
+# 🗣️ Context Bot (Boribot)
 
-> **"แปลภาษาคนเก่ง... ให้เป็นภาษาคนทั่วไป"** 
-> ผู้ช่วย AI อัจฉริยะบน LINE OA ที่ช่วยอธิบายศัพท์เฉพาะทาง (Jargon) หรือศัพท์แสงในวงการต่างๆ ให้เข้าใจง่าย พร้อมแนะนำทางออกและบริการที่เหมาะสม
-
----
-
-## 🌟 จุดเด่นและฟีเจอร์หลัก (Features)
-
-1. **AI Jargon Translator:** แปลคำศัพท์เทคนิคที่ฟังดูยาก (เช่น *ต๊าปเกลียว*, *API*, *Wireframe*) ให้กลายเป็นภาษาพูดที่คนทั่วไปเก็ททันที
-2. **Conversation Memory:** บอทมีระบบจดจำบริบทย้อนหลัง (จำได้ 10 ข้อความล่าสุด) ทำให้คุณสามารถถามคำถามต่อเนื่องได้เหมือนคุยกับคนจริงๆ โดยไม่หลุดประเด็น
-3. **Smart Quick Replies (Next Steps):** เมื่อ AI ตอบคำถามเสร็จ จะมีระบบเดาใจสร้างปุ่ม **"คำถามถัดไปที่ควรถาม"** เด้งขึ้นมาให้กดทันที ทำให้บทสนทนาไหล่ลื่น และผู้ใช้ได้ข้อมูลที่ลึกขึ้น
-4. **Lead Generation & Affiliate (Business Model):** หากปัญหานั้นจำเป็นต้องได้รับความช่วยเหลือจากผู้เชี่ยวชาญ AI จะช่วยแนะนำบริการและแนบลิงก์ (URL) ของสปอนเซอร์ หรือร้านค้าพาร์ทเนอร์ให้ทันทีผ่านข้อความแยก
+> **"Translating geek speak... into human speak"** 
+> An intelligent AI assistant on LINE OA that explains jargon or technical terms from various industries into easy-to-understand language, while recommending appropriate solutions and services.
 
 ---
 
-## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
+## 🌟 Key Features
+
+1. **AI Jargon Translator:** Translates difficult technical terms (e.g., *Thread tapping*, *API*, *Wireframe*) into everyday language that anyone can instantly understand.
+2. **Conversation Memory:** The bot features a context memory system (remembering the last 10 messages), allowing you to ask follow-up questions seamlessly, just like talking to a real person without losing the context.
+3. **Smart Quick Replies (Next Steps):** Once the AI answers a question, a smart system predicts and generates **"Next step questions"** as quick reply buttons. This keeps the conversation flowing and provides users with deeper insights effortlessly.
+4. **Lead Generation & Affiliate (Business Model):** If a problem requires assistance from an expert or professional, the AI will recommend relevant services and attach sponsor or partner links (URLs) via a separate message block.
+
+---
+
+## 🛠️ Tech Stack
 
 *   **Runtime:** Node.js
 *   **Framework:** Express.js
 *   **Messaging Platform:** LINE Messaging API (`@line/bot-sdk` v10.x.x)
-*   **AI Engine:** DeepSeek API (`deepseek-chat`) ทำงานผ่าน `openai` package
+*   **AI Engine:** DeepSeek API (`deepseek-chat`) via the `openai` package
 
 ---
 
-## 🚀 วิธีการติดตั้งและรันโปรเจกต์ (Getting Started)
+## 🚀 Getting Started
 
-### 1. สิ่งที่ต้องมีเบื้องต้น (Prerequisites)
-*   ติดตั้ง **Node.js** (เวอร์ชัน 16 ขึ้นไป)
-*   มีบัญชี **LINE Developers** และได้สร้าง Provider / Channel (Messaging API) แล้ว
-*   มีบัญชี **DeepSeek API** นำ API Key มาเตรียมไว้
-*   ติดตั้งโปรแกรม **ngrok** สำหรับทำ Forwarding Port ในเครื่องให้เป็น Public URL (ตอนรันแบบ Local)
+### 1. Prerequisites
+*   Install **Node.js** (version 16 or higher)
+*   A **LINE Developers** account with a created Provider / Channel (Messaging API)
+*   A **DeepSeek API** account with an API Key ready
+*   Install **ngrok** for port forwarding your local machine to a Public URL (for local development)
 
-### 2. การติดตั้ง
-1. Clone หรือสร้างโฟลเดอร์โปรเจกต์แล้วเข้าไปในโฟลเดอร์รันคำสั่ง:
+### 2. Installation
+1. Clone or create the project folder and navigate into it, then run:
    ```bash
    npm install
    ```
-2. สร้างไฟล์ `.env` ที่ Root Folder ตามรูปแบบด้านล่าง:
+2. Create a `.env` file in the root folder using the format below:
    ```env
    PORT=3000
-   LINE_CHANNEL_ACCESS_TOKEN=ใส่_LINE_TOKEN_ของคุณที่นี่
-   LINE_CHANNEL_SECRET=ใส่_LINE_SECRET_ของคุณที่นี่
-   DEEPSEEK_API_KEY=ใส่_DEEPSEEK_API_KEY_ของคุณที่นี่
+   LINE_CHANNEL_ACCESS_TOKEN=your_LINE_TOKEN_here
+   LINE_CHANNEL_SECRET=your_LINE_SECRET_here
+   DEEPSEEK_API_KEY=your_DEEPSEEK_API_KEY_here
    ```
 
-### 3. วิธีการรันเซิร์ฟเวอร์
-เปิด Terminal แล้วรันคำสั่ง:
+### 3. Running the Server
+Open your terminal and run the following command:
 ```bash
 node server.js
 ```
-*(ถ้าสำเร็จจะขึ้นข้อความ `🚀 บอทบริบท (พลัง DeepSeek) กำลังรันอยู่ที่ http://localhost:3000`)*
+*(If successful, you will see the message: `🚀 บอทบริบท (พลัง DeepSeek) กำลังรันอยู่ที่ http://localhost:3000`)*
 
-### 4. วิธีเชื่อมต่อกับ LINE (Webhook)
-1. เปิด Terminal แถบใหม่ (ปล่อยอันแรกทิ้งไว้) แล้วรันคำสั่ง:
+### 4. Connecting with LINE (Webhook)
+1. Open a new terminal tab (leave the first one running) and execute:
    ```bash
    ngrok http 3000
    ```
-2. นำ URL ปลายทางที่เป็น `https://...ngrok-free.app` ไปใส่ในหน้า **LINE Developers > Messaging API > Webhook URL** 
-   *(อย่าลืมเติม `/webhook` ต่อท้ายลิงก์ เช่น `https://xxxx.ngrok-free.app/webhook`)*
-3. กดปุ่ม `Verify` และเปิด `Use webhook`
+2. Copy the destination URL (e.g., `https://...ngrok-free.app`) and paste it into the **LINE Developers > Messaging API > Webhook URL** field. 
+   *(Don't forget to append `/webhook` at the end of the link, e.g., `https://xxxx.ngrok-free.app/webhook`)*
+3. Click `Verify` and toggle on `Use webhook`.
 
 ---
-
+*Created as a Hackathon / Startup Pitch Idea MVP.*
